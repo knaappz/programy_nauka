@@ -1,0 +1,12 @@
+:root {
+  
+}
+
+body {
+  margin: 0 auto;
+  display: flex;
+  place-items: center;
+  font-family: "Kode Mono";
+}
+
+
