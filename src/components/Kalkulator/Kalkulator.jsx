@@ -1,14 +1,14 @@
 import { useReducer } from 'react'
 import './Calc.css'
 
-// function reducer(state, action) {
+function reducer(state, {type, payload}) {
 
-// }
+}
 
 
 export default function Kalkulator() {
 
-    // const [{currOp, prevOp, operation}, dispatch] = useReducer(reducer)
+    const [{currOp, prevOp, operation}, dispatch] = useReducer(reducer)
 
     return (
     <section id='homeview'>
@@ -18,8 +18,8 @@ export default function Kalkulator() {
 
 
             <div className="output">
-                <div className="prev-operand"></div>
-                <div className="curr-operand"></div>
+                <div className="prev-operand">{prevOp} {operation}</div>
+                <div className="curr-operand">{currOp}</div>
             </div>
 
             <button className='span-two calcBTN'>AC</button>
