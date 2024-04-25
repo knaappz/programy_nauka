@@ -14,21 +14,22 @@ export const ACTIONS = {
 function reducer(state, {type, payload}) {
     switch (type) {
         case ACTIONS.ADD_DIGIT:
+        case ACTIONS.ADD_DIGIT:
             if (state.overwrite) {
                 return {
-                    ...state,
-                    currOp: payload.digit,
-                    overwrite: false,
-                }
+                ...state,
+                currOp: payload.digit,
+                overwrite: false,
+                };
             }
+            
             if (payload.digit === '0' && state.currOp === '0') {
                 return state
             }
             if (payload.digit === '.' && state.currOp.includes('.')) {
                 return state
             }
-
-
+                
             return {
                 ...state,
                 currOp: `${state.currOp || ''}${payload.digit}`,
@@ -124,7 +125,7 @@ function evaluate({currOp, prevOp, operation}) {
     return computation.toString()
 }
 
-const Int_Formater = new Intl.NumberFormat('pl', {maximumFractionDigits: 0})
+const Int_Formater = new Intl.NumberFormat('en-us', {maximumFractionDigits: 0})
 
 function formatOp(op) {
     if (op == null) return
@@ -175,7 +176,13 @@ export default function Kalkulator() {
 
             <OpButton operation='-' dispatch={dispatch} className='calcBTN'/>
 
-            <DigitButton digit='.' dispatch={dispatch} className='calcBTN'/>
+            {!currOp && (
+                <button className='calcBTN'>.</button>
+            )}
+
+            {currOp && (
+                <DigitButton digit='.' dispatch={dispatch} className='calcBTN'/>
+            )}
 
             <DigitButton digit='0' dispatch={dispatch} className='calcBTN'/>
             <button onClick={() => dispatch({type: ACTIONS.EVALUATE})} className='span-two calcBTN'>=</button>
