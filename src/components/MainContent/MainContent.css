@@ -36,13 +36,15 @@
     transition: .2s;
   }
 
-#homeview {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .btn:hover {
     background-color: #393939;
     transform: translateY(5px);
+}
+
+.homeBTN {
+    background-color: #fc5436;
+}
+
+.homeBTN:hover {
+    background-color: #aa3824;
 }

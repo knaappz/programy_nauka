@@ -1,4 +1,4 @@
-
+import './HomeView.css'
 export default function HomeView() {
 
     return (
