@@ -1,6 +1,10 @@
+This project was created with vite!
 In the project directory, you can run:
 
 npm install
-before starting the project, execute this command in order to download all packages
 
-npm run start
+Next:
+
+npm run dev
+
+Enjoy calcuulator XD
