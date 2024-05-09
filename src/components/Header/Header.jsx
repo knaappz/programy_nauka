@@ -3,7 +3,7 @@ import './Header.css'
 function Header() {
     return (
       <section id='header'>
-        <h1>Calcoolator</h1>
+        <h1>Kalkuulator</h1>
       </section>
 
       
