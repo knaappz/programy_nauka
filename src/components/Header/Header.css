@@ -1,9 +1,9 @@
 #header {
-    width: 100%;
     background-color: rgb(255, 245, 234);
     display: flex;
-    align-items: center;
-    justify-content:space-around;
+    padding: .5rem;
+    width: 100%;
+    justify-content: center;
 }
 
 h1,h3 {
@@ -27,4 +27,8 @@ a {
 
 .linkedin {
     color: rgb(0, 123, 255);
+}
+
+.cool {
+    color: red;
 }

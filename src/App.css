@@ -1,4 +1,10 @@
-#root {
+
+body {
   margin: 0 auto;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  font-family: "Kode Mono";
+  background-color: rgb(255, 202, 105);
 }
+

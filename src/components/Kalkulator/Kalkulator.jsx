@@ -2,6 +2,7 @@ import { useReducer } from 'react'
 import './Calc.css'
 import DigitButton from '../DigitButton/DigitButton'
 import OpButton from '../OpButton/OpButton'
+import Big from 'big.js';
 
 export const ACTIONS = {
     ADD_DIGIT: 'ad-digit',
@@ -13,7 +14,6 @@ export const ACTIONS = {
 
 function reducer(state, {type, payload}) {
     switch (type) {
-        case ACTIONS.ADD_DIGIT:
         case ACTIONS.ADD_DIGIT:
             if (state.overwrite) {
                 return {
@@ -104,25 +104,25 @@ function reducer(state, {type, payload}) {
 }
 
 function evaluate({currOp, prevOp, operation}) {
-    const prev = parseFloat(prevOp)
-    const curr = parseFloat(currOp)
-    if (isNaN(prev) || isNaN(curr)) return ''
-    let computation = ''
+    const prev = new Big(prevOp);
+    const curr = new Big(currOp);
+    if (isNaN(prev) || isNaN(curr)) return '';
+    let computation = new Big(0);
     switch (operation) {
         case '+':
-            computation = prev + curr
-            break
+            computation = prev.plus(curr);
+            break;
         case '-':
-            computation = prev - curr
-            break
+            computation = prev.minus(curr);
+            break;
         case '*':
-            computation = prev * curr
-            break
+            computation = prev.times(curr);
+            break;
         case '/':
-            computation = prev / curr
-            break
+            computation = prev.div(curr);
+            break;
     }
-    return computation.toString()
+    return computation.toFixed();
 }
 
 const Int_Formater = new Intl.NumberFormat('en-us', {maximumFractionDigits: 0})

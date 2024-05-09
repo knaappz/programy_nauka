@@ -3,9 +3,11 @@
     height: 100vh;
     background-color: rgb(255, 202, 105);
     display: flex;
-    align-items: center;
     flex-direction: column;
     gap: 2rem;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 
 #maincontent h1, button {

@@ -1,12 +1,4 @@
-:root {
-  
+#root {
+  width: 100%;
+  min-width: 400px;
 }
-
-body {
-  margin: 0 auto;
-  display: flex;
-  place-items: center;
-  font-family: "Kode Mono";
-}
-
-
